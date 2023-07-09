@@ -61,9 +61,9 @@ const BottomRight = memo(() => {
    }, [listSong]);
    useLayoutEffect(() => {
       if(isRandom && listSong.length > 0) {
-         let arrNext = listSong.filter((e) => e.encodeId !== infoSongCurrent.encodeId)
-         let arrShuffle = [infoSongCurrent, ...lodash.shuffle(arrNext)]
-         dispatch(setListSongShuffle(arrShuffle))
+         let arrNext = listSong.filter((e) => e.encodeId !== infoSongCurrent.encodeId);
+         let arrShuffle = [infoSongCurrent, ...lodash.shuffle(arrNext)];
+         dispatch(setListSongShuffle(arrShuffle));
          setItems(arrShuffle);
       };
       if(!isRandom) {
@@ -134,9 +134,7 @@ const BottomRight = memo(() => {
                                        if (index + 1 === items.length) {
                                           lastIndex = true
                                        };
-                                       return (
-                                          <ItemRighPlayer lastIndex={lastIndex} key={e.encodeId || e.id} index={index} data={e}/>
-                                       );
+                                       return (<ItemRighPlayer lastIndex={lastIndex} key={e.encodeId || e.id} index={index} data={e}/>);
                                     })}
                               </ul>
                            )
@@ -148,17 +146,8 @@ const BottomRight = memo(() => {
                {toggleSilde && currentEncodeId && (
                   <ul className="player_queue-listmusic">
                      {recentSongs && recentSongs?.length > 0 && recentSongs?.map((e, index) => {
-                           return (
-                              <ItemRighPlayer
-                                 setToggleSilde={setToggleSilde}
-                                 items={items}
-                                 key={e.encodeId || e.id}
-                                 index={index}
-                                 isHistory={true}
-                                 data={e}
-                              />
-                           )
-                        })}
+                        return (<ItemRighPlayer setToggleSilde={setToggleSilde} items={items} key={e.encodeId || e.id} index={index} isHistory={true} data={e}/>)
+                     })}
                   </ul>
                )}
 

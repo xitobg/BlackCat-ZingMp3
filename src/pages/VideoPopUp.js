@@ -132,12 +132,7 @@ const VideoPopUp = () => {
                               <div className=" video-player  w-full relative">
                                  <div className="player-wrapper relative border-none overflow-hidden rounded-xl ">
                                     <ReactPlayer
-                                       url={
-                                          Object.values(datas.streaming.mp4)[2] ||
-                                          Object.values(datas.streaming.mp4)[1] ||
-                                          Object.values(datas.streaming.mp4)[0] ||
-                                          ""
-                                       }
+                                       url={Object.values(datas.streaming.mp4)[2] || Object.values(datas.streaming.mp4)[1] || Object.values(datas.streaming.mp4)[0] || ""}
                                        id="video-react"
                                        className="react-player outline-none border-none"
                                        width="100%"
@@ -145,9 +140,7 @@ const VideoPopUp = () => {
                                        playing
                                        height="100%"
                                        controls
-                                       onReady={() => {
-                                          dispatch(pushMvsLogged(infoCurrentMv))
-                                       }}
+                                       onReady={() => dispatch(pushMvsLogged(infoCurrentMv))}
                                     />
                                  </div>
                               </div>
@@ -156,7 +149,7 @@ const VideoPopUp = () => {
                                     <div className="video-queue-list p-[1.6rem]">
                                        <PlayListSelector classAdd={"!mt-0"} title="Danh Sách Phát">
                                           {datas.recommends.map((e) => {
-                                             return <VideoPlayItems key={e.encodeId} data={e}></VideoPlayItems>
+                                             return <VideoPlayItems key={e.encodeId} data={e}/>
                                           })}
                                        </PlayListSelector>
                                     </div>
@@ -170,7 +163,7 @@ const VideoPopUp = () => {
                            <div className="main_mv main-page-item active">
                               <div className="main_mv-container ">
                                  {datas?.artists?.map((e, index) => {
-                                    return <MvDataList key={index} item={e}></MvDataList>
+                                    return <MvDataList key={index} item={e}/>
                                  })}
                               </div>
                            </div>
