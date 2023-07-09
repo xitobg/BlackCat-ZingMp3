@@ -55,6 +55,7 @@ const ArtistPage = () => {
    useLayoutEffect(() => {
       scrollTop();
       fetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    if(datas?.length === 0) {
      return <LoadingSvg/>

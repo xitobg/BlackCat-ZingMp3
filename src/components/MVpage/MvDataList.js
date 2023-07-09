@@ -6,16 +6,18 @@ import { tmdAPI } from "../../asset/api/path"
 import PlayListSelector from "../Selection/PlayListSelector"
 
 const MvDataList = memo(({ item }) => {
-   const [datas, setData] = useState([])
+   const [datas, setData] = useState([]);
 
    const fetchData = useCallback(async () => {
       const data = await axios.get(tmdAPI.getArtistPage(item.alias))
       const res = data.data.data.sections?.find((e) => e.sectionType === "video")
       setData(res.items);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    useLayoutEffect(() => {
       fetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    if (datas.length === 0) return;

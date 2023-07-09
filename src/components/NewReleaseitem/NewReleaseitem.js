@@ -170,7 +170,7 @@ const NewReleaseItemStyle = styled.div`
    }
 `;
 
-const NewReleaseitem = ({ isRadio, isDisk, classDisk, item, isArtist }) => {
+const NewReleaseitem = memo(({ isRadio, isDisk, classDisk, item, isArtist }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let { isLike, handleLike } = useLikeHook(item, isDisk ? 1 : 2);
@@ -187,21 +187,8 @@ const NewReleaseitem = ({ isRadio, isDisk, classDisk, item, isArtist }) => {
       <div className="player_queue-item-left">
         <div className="relative z-[1]">
           <div className="player_queue-left">
-            {!isArtist && (
-              <LazyLoadImage
-                visibleByDefault={item?.thumbnailM === img}
-                className="player_queue-img"
-                src={item?.thumbnailM}
-                alt=""
-              />
-            )}
-            {isArtist && (
-              <LazyLoadImage
-                className="player_queue-img"
-                src={item?.thumbnailM}
-                alt=""
-              />
-            )}
+            {!isArtist && (<LazyLoadImage visibleByDefault={item?.thumbnailM === img} className="player_queue-img" src={item?.thumbnailM} alt="" />)}
+            {isArtist && (<LazyLoadImage className="player_queue-img" src={item?.thumbnailM} alt="" />)}
             <div
               onClick={(e) => {
                 if (!isDisk) return;
@@ -268,12 +255,12 @@ const NewReleaseitem = ({ isRadio, isDisk, classDisk, item, isArtist }) => {
                     <>
                       {!playing && (
                         <span onClick={() => dispatch(setPlay(true))}>
-                          <ActionPlay></ActionPlay>
+                          <ActionPlay/>
                         </span>
                       )}
                       {playing && (
                         <span onClick={() => dispatch(setPlay(false))}>
-                          <ActionIcon></ActionIcon>
+                          <ActionIcon/>
                         </span>
                       )}
                     </>
@@ -363,6 +350,6 @@ const NewReleaseitem = ({ isRadio, isDisk, classDisk, item, isArtist }) => {
       )}
     </NewReleaseItemStyle>
   );
-};
+});
 
-export default memo(NewReleaseitem);
+export default NewReleaseitem;

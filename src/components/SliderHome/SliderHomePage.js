@@ -68,6 +68,7 @@ const SliderHomePage = memo(() => {
       if(data) {
          setData(dataNice[0].items)
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
    const navigationPrevRef = React.useRef(null);
    const navigationNextRef = React.useRef(null);
@@ -130,7 +131,7 @@ const SliderHomePage = memo(() => {
                            <span className="material-icons-outlined">arrow_forward_ios</span>
                         </button>
                      </>
-                     {(!datas || status === "loading") && Array(3).fill(0).map((index) => (
+                     {(!datas || status === "loading") && Array(3).fill(0).map((e, index) => (
                         <SwiperSlide key={index}>
                           <div className="gallery-item">
                             <div className="zm-card  cursor-pointer">

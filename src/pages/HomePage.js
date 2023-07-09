@@ -17,20 +17,17 @@ const HomePage = memo(() => {
       <HistoryHomePage/>
       <WantToHearHomePage/>
       <NewReleaseHomePage/>
-      <NewMusicEveryDayHomePage/>
       <FavoriteArtistHomePapge/>
       <WeekChartHomePage/>
       <ArtistSpotlight/>
       <Top100HomePage/>
-
       <RadioHomePage/>
+      <NewMusicHomePage/>
+      <NewMusicHomePage2/>
+      <NewMusicEveryDayHomePage/>
       <EventHomePage/>
     </div>
   );
 });
-/*
-      <NewMusicHomePage/>
-      <NewMusicHomePage2/>
-*/
 
 export default HomePage;

@@ -113,21 +113,21 @@ const PortalStyle = styled.div`
 `
 
 const ArtistInfoTop = memo(({ data }) => {
-   const dispatch = useDispatch()
-   const playlistEncodeId = useSelector((state) => state.queueNowPlay.playlistEncodeId)
-   const loading = useSelector((state) => state.queueNowPlay.loading)
-   const playing = useSelector((state) => state.setting.playing)
+   const dispatch = useDispatch();
+   const playlistEncodeId = useSelector((state) => state.queueNowPlay.playlistEncodeId);
+   const loading = useSelector((state) => state.queueNowPlay.loading);
+   const playing = useSelector((state) => state.setting.playing);
 
-   let active = playlistEncodeId === data?.playlistId
+   let active = playlistEncodeId === data?.playlistId;
 
-   const { isLike, handleLike } = useLikeHook(data, 3)
+   const { isLike, handleLike } = useLikeHook(data, 3);
 
-   const { Portal, show, hide } = usePortal({ defaultShow: false })
+   const { Portal, show, hide } = usePortal({ defaultShow: false });
 
    const handleClickBackdrop = (e) => {
-      const id = e.target.id
-      if (id === "theme-overlay" || id === "portal-bio-arits") hide()
-   }
+      const id = e.target.id;
+      if(id === "theme-overlay" || id === "portal-bio-arits") hide();
+   };
 
    return (
       <InfoTopStyles className="artist_page-title row !flex-wrap mb-[40px]">
@@ -138,7 +138,6 @@ const ArtistInfoTop = memo(({ data }) => {
                   {data?.sortBiography.length > 0 && data && (
                      <>
                         <span className="content-detail" dangerouslySetInnerHTML={{ __html: data?.sortBiography }}></span>
-
                         <span onClick={() => show()} className="read-more ml-2">
                            ...Xem Thêm
                         </span>

@@ -25,6 +25,7 @@ const ArtistSpotlight = memo(() => {
       if(!datas) {
         setData(dataAritsHomePage);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    const navigationPrevRef = React.useRef(null);
    const navigationNextRef = React.useRef(null);

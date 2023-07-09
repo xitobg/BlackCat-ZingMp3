@@ -37,6 +37,7 @@ const NewReleaseHomePage = memo(() => {
       if(dataSelector) {
          setData(dataSelector?.items);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [status]);
 
     const SongList = memo(() => {

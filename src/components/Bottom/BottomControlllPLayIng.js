@@ -23,17 +23,15 @@ const BottomControlllPLayIng = memo(() => {
 
    const { isLoop, volume, playing, muted, isRandom, progressInterval } = useSelector((state) => state.setting)
 
-   const setTimeSong1 = useCallback(
-      (e) => {
-         let progressWidhtVal = progresArea.current.clientWidth // Lấy chiều x
-         let clickedOffSetX = e.nativeEvent.offsetX // lấy value chiều x khi click
-         let res = (clickedOffSetX / progressWidhtVal) * infoSongCurrent?.duration
-         progressBar.current.style.width = (res / infoSongCurrent?.duration) * 100 + "%"
-         dispatch(setCurrentTime(res))
-         audioRef.current.seekTo(res)
-      },
-      [progresArea, infoSongCurrent, progressBar]
-   )
+   const setTimeSong1 = useCallback((e) => {
+      let progressWidhtVal = progresArea.current.clientWidth // Lấy chiều x
+      let clickedOffSetX = e.nativeEvent.offsetX // lấy value chiều x khi click
+      let res = (clickedOffSetX / progressWidhtVal) * infoSongCurrent?.duration
+      progressBar.current.style.width = (res / infoSongCurrent?.duration) * 100 + "%"
+      dispatch(setCurrentTime(res))
+      audioRef.current.seekTo(res)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [progresArea, infoSongCurrent, progressBar]);
 
    useEffect(() => {
       const setOff = () => {
@@ -43,10 +41,12 @@ const BottomControlllPLayIng = memo(() => {
       return () => {
          window.removeEventListener("beforeunload", setOff())
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
    useLayoutEffect(() => {
-      progressBar.current.style.width = (currentTime / infoSongCurrent?.duration) * 100 + "%"
+      progressBar.current.style.width = (currentTime / infoSongCurrent?.duration) * 100 + "%";
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [currentTime])
 
    return (
@@ -103,4 +103,4 @@ const BottomControlllPLayIng = memo(() => {
    )
 })
 
-export default BottomControlllPLayIng
+export default BottomControlllPLayIng;

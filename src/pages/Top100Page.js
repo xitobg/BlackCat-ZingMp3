@@ -10,6 +10,7 @@ const Top100Page = () => {
       if(data) {
          setData(data.data);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
    if(datas.length === 0) return <LoadingSvg/>
    return (

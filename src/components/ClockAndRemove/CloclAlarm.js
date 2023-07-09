@@ -159,21 +159,18 @@ const CloclAlarm = memo(() => {
    let TimeOut;
    const handleClock = ({ hours, minute }) => {
       const timoutPause = parseInt(hours) * 60 * 60 * 1000 + parseInt(minute) * 60 * 1000;
-
       TimeOut = setTimeout(() => {
          dispatch(setClockOff(false))
          dispatch(setPlay(false))
       }, [timoutPause])
-
       clearTimeout(TimeOut);
-
       dispatch(setClockOff(true));
       hide();
       toast(`Nhạc sẽ dừng sau ${hours} Giờ, ${minute} Phút`, {
          type: "success",
          autoClose: "default",
       });
-   }
+   };
 
    const handleRemoveTimeOut = () => {
       clearTimeout(TimeOut)

@@ -71,6 +71,7 @@ const BottomRight = memo(() => {
          setItems(listSong);
          dispatch(setNextSong(indexCurrentSongActive));
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [isRandom, playlistEncodeId]);
    useEffect(() => {
       let node = document.querySelector(`div[data-rbd-draggable-id='${currentEncodeId}']`);
@@ -102,6 +103,7 @@ const BottomRight = memo(() => {
             dispatch(setNextSongShuffle(reorderedItems.indexOf(indexActive)));
             dispatch(setDraggUpdateListShuffle(reorderedItems));
          };
+         // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [items, currentEncodeId, isRandom]);
    return (
       <div className={`player_queue ${isToggle ? "player_queue-is_active" : ""}`}>

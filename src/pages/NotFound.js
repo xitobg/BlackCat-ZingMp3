@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+const NotFound = memo(() => {
    return (
       <center>
         <Link className="cursor-pointer" to="/">
-          HOME
+          <p style={{ color: "red" }}>HomePage</p>
         </Link>
       </center>
    )
-}
+});
 
 export default NotFound

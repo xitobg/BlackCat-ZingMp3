@@ -6,23 +6,20 @@ import { setLocationOpen, setOpenOn } from "../../features/ToggleMainMv/toggleMa
 import { setInfoCurrentMv } from "../../features/QueueFeatures/QueueFeatures"
 
 const MvItem = memo(({ data, isMvFull }) => {
-   const { artists, duration, encodeId, title, thumbnailM, artist, thumbnail } = data
-   const stateOpen = useSelector((state) => state.setOpenMainMv.isOpen)
-
-   const dispatch = useDispatch()
-
-   const location = useLocation()
-   const navigete = useNavigate()
+   const { artists, duration, encodeId, title, thumbnailM, artist, thumbnail } = data;
+   const stateOpen = useSelector((state) => state.setOpenMainMv.isOpen);
+   const dispatch = useDispatch();
+   const location = useLocation();
+   const navigete = useNavigate();
 
    const handleClick = () => {
-      navigete(`/video-clip/${encodeId}`)
-      dispatch(setInfoCurrentMv(data))
-
-      if (!stateOpen) {
-         dispatch(setOpenOn())
-         dispatch(setLocationOpen(location.pathname))
-      }
-   }
+      navigete(`/video-clip/${encodeId}`);
+      dispatch(setInfoCurrentMv(data));
+      if(!stateOpen) {
+         dispatch(setOpenOn());
+         dispatch(setLocationOpen(location.pathname));
+      };
+   };
 
    return (
       <div className={`col mv-items ${!isMvFull ? "l-4 m-4 c-6 " : "l-3 m-4 c-6 !mb-[20px]"}`}>
@@ -51,7 +48,7 @@ const MvItem = memo(({ data, isMvFull }) => {
                <img src={artist?.thumbnail || thumbnail || ""} alt={title} />
             </div>
             <div className="main_mv-info-title">
-               <a className="main_title-text" href="#">
+               <a className="main_title-text" href="!#">
                   {title}
                </a>
                <div className="main_subtitle">

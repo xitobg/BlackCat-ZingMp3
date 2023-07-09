@@ -22,6 +22,7 @@ const MyMusicPage = memo(() => {
       if (!activeUser) {
          navigate("/auth");
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    useEffect(() => {
@@ -30,6 +31,7 @@ const MyMusicPage = memo(() => {
             setDocs(value.data());
          });
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    
    return (

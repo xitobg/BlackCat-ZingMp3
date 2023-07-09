@@ -92,6 +92,7 @@ const Word = memo(({ data, index }) => {
       if (current < endTime) {
          liRef.current.classList.remove("up")
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [current, isSeek])
 
    return (
@@ -113,7 +114,7 @@ const BgFullKaroke = memo(() => {
    const lyricByLine = useSelector((state) => state.lyrics.lyricByLine)
    const loading = useSelector((state) => state.lyrics.loading)
    const current = useSelector((state) => state.queueNowPlay.currentTime)
-   const isReady = useSelector((state) => state.setting.isReady)
+   // const isReady = useSelector((state) => state.setting.isReady)
 
    const ref0 = useRef(0)
    const ref1 = useRef(1)
@@ -138,7 +139,8 @@ const BgFullKaroke = memo(() => {
          }
       })
 
-      setState(lyric)
+      setState(lyric);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [lyricByLine])
 
    useLayoutEffect(() => {
@@ -172,6 +174,7 @@ const BgFullKaroke = memo(() => {
       audio.addEventListener("seeked", onSeekToAudio)
 
       return () => audio.removeEventListener("seeked", onSeekToAudio)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
    useEffect(() => {
@@ -183,6 +186,7 @@ const BgFullKaroke = memo(() => {
       return () => {
          dispatch(setProgressInterval(500))
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
    let isTextSize

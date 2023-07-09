@@ -79,24 +79,15 @@ const LoginPortal = ({ setOpen }) => {
    )
 }
 const RemoveList = memo(() => {
-   const [open, setOpen] = useState(false)
+   const [open, setOpen] = useState(false);
    return (
-      <Tippy
-         animation={"perspective-extreme"}
-         onClickOutside={() => setOpen(false)}
-         visible={open}
-         content={<LoginPortal setOpen={setOpen}/>}
-         interactive={true}
-         arrow={false}
-         offset={[0, 10]}
-         placement={"bottom-end"}
-      >
+      <Tippy animation={"perspective-extreme"} onClickOutside={() => setOpen(false)} visible={open} content={<LoginPortal setOpen={setOpen}/>} interactive={true} arrow={false} offset={[0, 10]} placement={"bottom-end"}>
          <div onClick={() => setOpen((value) => !value)} className="player_btn queue_more">
             <span className="material-icons-outlined"> more_horiz </span>
             <div className="playing_title-hover">Khác</div>
          </div>
       </Tippy>
    )
-})
+});
 
 export default RemoveList

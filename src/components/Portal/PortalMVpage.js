@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { formartTimeNewFeed } from "../../asset/data/functions"
 import ReactPlayer from "react-player"
-
+import MyComment from "../MVpage/MyComment"
 const PortalStyle = styled.div`
    .message-wrapper {
       width: 100%;
@@ -279,6 +279,9 @@ const PortalMVpage = ({ Portal, hide, data }) => {
                                  {/* <>
                                     <MyComment></MyComment>
                                  </> */}
+                                 <>
+                                    <MyComment></MyComment>
+                                 </>
                               </div>
                            </div>
                            <div className="message-wrapper">

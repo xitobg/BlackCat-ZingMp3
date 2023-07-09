@@ -28,13 +28,15 @@ const VideoPopUp = () => {
       const data = await axios.get(tmdAPI.getVideoMv(id))
       if (datas.length === 0 || !datas) {
          setData(data.data.data)
-      }
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
    const handleClose = useCallback(() => {
       let video = document.querySelector("#video-react video");
       video.pause();
       navigator(`${idOpen}`);
       dispatch(setOpenOff());
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    useEffect(() => {
       document.getElementById("scrollableDiv").style.zIndex = "120"
@@ -45,9 +47,11 @@ const VideoPopUp = () => {
    useLayoutEffect(() => {
       scrollTop()
       fetchData()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [id])
    useLayoutEffect(() => {
-      dispatch(setPlayingAction(false))
+      dispatch(setPlayingAction(false));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
    if (datas?.length === 0 || !datas) {
       return (

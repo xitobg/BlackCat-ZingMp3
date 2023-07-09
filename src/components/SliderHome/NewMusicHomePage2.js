@@ -14,6 +14,7 @@ const NewMusicHomePage2 = memo(() => {
       if(data) {
          setData(dataSelector.items);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
 
    try {

@@ -18,16 +18,15 @@ const BottomControlsRight = () => {
 
    useEffect(() => {
       let x = setting.volume * 100
-      let color = `linear-gradient(90deg, var(--progressbar-active-bg) ${x}%, var(--progressbar-player-bg) ${x}%)`
-      volumeRef.current.style.background = color
-   }, [setting.volume, setting.isVolume])
+      let color = `linear-gradient(90deg, var(--progressbar-active-bg) ${x}%, var(--progressbar-player-bg) ${x}%)`;
+      volumeRef.current.style.background = color;
+   }, [setting.volume, setting.isVolume]);
 
    useEffect(() => {
       const playbar = document.querySelector(".playing-bar")
       const header = document.querySelector(".header")
       header.style.zIndex = 112
       playbar.style.zIndex = 113
-
       return () => {
          header.style.zIndex = null
          playbar.style.zIndex = null
@@ -82,8 +81,8 @@ const BottomControlsRight = () => {
                   max={100}
                   value={setting.volume * 100}
                   onChange={(e) => {
-                     dispatch(setVolume(e.target.value / 100))
-                     dispatch(setIsVolume(e.target.value / 100))
+                     dispatch(setVolume(e.target.value / 100));
+                     dispatch(setIsVolume(e.target.value / 100));
                   }}
                />
             </div>

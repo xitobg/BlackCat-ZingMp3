@@ -30,14 +30,17 @@ const AlbumPage = () => {
       scrollTop()
       fetchData()
       fetchDataSuggested()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [id]);
    const fetchData = useCallback(async () => {
       const data = await axios.get(tmdAPI.getAlbumPage(id))
       setData(data.data.data)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    const fetchDataSuggested = useCallback(async () => {
       const data = await axios.get(tmdAPI.getSuggestedAlbum(id))
-      setDataSuggested(data.data.data)
+      setDataSuggested(data.data.data);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    if (datas?.length === 0 || dataSuggested?.length === 0) return <LoadingSvg/>
    const idAlbum = datas?.encodeId;
@@ -100,20 +103,19 @@ const AlbumPage = () => {
             </div>
 
             <div>
-               {dataSuggested?.map((e) => {
-                  if (e.sectionType === "adBanner") return
+               {dataSuggested?.map((e, index) => {
+                  if(e.sectionType === "adBanner") return;
 
-                  if (e.sectionType === "artist") {
+                  if(e.sectionType === "artist") {
                      return (
                         <PlayListSelector key={uuidv4()} title={e.title}>
                            {e?.items?.map((item, index) => {
-                              if (index > 4) return
+                              if(index > 4) return
                               let classGird = "col l-2-4 m-3 c-5"
-                              if (index === 4) {
+                              if(index === 4) {
                                  classGird = "col l-2-4 m-0 c-5"
-                              }
-
-                              return <ItemArits key={uuidv4()} classGird={classGird} data={item}></ItemArits>
+                              };
+                              return <ItemArits key={uuidv4()} classGird={classGird} data={item}/>
                            })}
                         </PlayListSelector>
                      )

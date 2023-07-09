@@ -11,7 +11,6 @@ const HistorySong = () => {
                {recentSongs && recentSongs.length > 0 && recentSongs.map((e, index) => {
                   return <ItemChartList isNotList isNoneRank item={e} index={index} key={e.encodeId}/>
                })}
-
                {recentSongs && recentSongs.length === 0 && (
                   <div className="personal_podcast-main personal_container-main active">
                      <div className="personal_podcast-img"></div>

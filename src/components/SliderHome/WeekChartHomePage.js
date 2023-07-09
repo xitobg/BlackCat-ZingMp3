@@ -11,6 +11,7 @@ const WeekChartHomePage = memo(() => {
       if(data) {
          setData(dataSelector.items);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
 
    return (
@@ -20,7 +21,7 @@ const WeekChartHomePage = memo(() => {
                 const img = e.cover.slice(e.cover.lastIndexOf("/"));
                 return (
                      <div key={index} className="chart-weekend_list-item col l-4 m-4 c-5">
-                        <a className="chart-weekend_list-item-link main-page_list-item main_page-hover" href="#">
+                        <a className="chart-weekend_list-item-link main-page_list-item main_page-hover" href="!#">
                            <div className="chart-weekend_list-item-link main-page_list-item_img">
                               <LazyLoadImage visibleByDefault={e.cover === img} src={e.cover} alt="" />
                            </div>

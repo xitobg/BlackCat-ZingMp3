@@ -6,8 +6,8 @@ import {
   ArtistSingle, HubDetailPage, SearchPageAll, SearchPageArtist, SearchPageMv,
   SearchPagePlaylist, HistroryPlayList, HistoryVideo, HistorySong, MyInfoPage,
 } from "../components/main";
-import { 
-  AlbumPage, ArtistPage, HomePage, HubPage, MvPage,
+import {  
+  AlbumPage, ArtistPage, HomePage, HubPage, MvPage, Profile,
   MyMusicPage, NewFeedPage, NotFound, RadioPage, SearchPage,
   Top100Page, ZingChartPage, NewMusicPage, VideoPopUp, HistoryPage, AuthenticationPage
 } from "../pages/main";
@@ -79,6 +79,7 @@ const RouterPage = memo(() => {
                {/*  */}
                <Route path="/video-clip/:id" element={<VideoPopUp/>}/>
                <Route path="/album/:id" element={<AlbumPage/>}/>
+               <Route path="/profile" element={<Profile/>}/>
                {/* Hiển thị nếu không thể tìm thấy trang yêu cầu */}
                <Route path="*" element={<NotFound/>}/>
             </Routes>

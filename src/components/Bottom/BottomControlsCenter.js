@@ -9,11 +9,10 @@ import { scrollToActive } from "../../asset/data/functions"
 
 const BottomControlsCenter = () => {
    const dispatch = useDispatch()
-   const { playing, isLoop, isRandom, isReady } = useSelector((state) => state.setting)
-
-   const currentIndexSong = useSelector((state) => state.queueNowPlay.currentIndexSong)
-   const infoSongNext = useSelector((state) => state.queueNowPlay.infoSongNext)
-   const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId)
+   const { playing, isLoop, isRandom, isReady } = useSelector((state) => state.setting);
+   const currentIndexSong = useSelector((state) => state.queueNowPlay.currentIndexSong);
+   const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId);
+   const infoSongNext = useSelector((state) => state.queueNowPlay.infoSongNext);
 
    return (
       <div className="player_controls-center">
@@ -21,7 +20,7 @@ const BottomControlsCenter = () => {
             <div
                onClick={() => {
                   dispatch(setRandomSongs())
-                  if (!isRandom) {
+                  if(!isRandom) {
                   }
                }}
                id="randomMusic"
@@ -38,12 +37,10 @@ const BottomControlsCenter = () => {
                   if (!isRandom) {
                      dispatch(setCurrentIndexSong(currentIndexSong - 1))
                   }
-
-                  dispatch(setReady(false))
-
+                  dispatch(setReady(false));
                   if (!playing) {
-                     dispatch(setPlay(true))
-                  }
+                     dispatch(setPlay(true));
+                  };
                }}
                id="prevMusic"
                className={`player_btn playing_back ${currentIndexSong === 0 ? "disabled" : ""}`}
@@ -58,7 +55,7 @@ const BottomControlsCenter = () => {
                      {playing && <i className="icon loading ic-pause-circle-outline"></i>}
                   </>
                )}
-               {!isReady && <LoadingIcon></LoadingIcon>}
+               {!isReady && <LoadingIcon/>}
             </div>
 
             <Tippy

@@ -13,10 +13,12 @@ import AlbumPage from "./AlbumPage";
 import HomePage from "./HomePage";
 import NotFound from "./NotFound";
 import HubPage from "./HubPage";
+import Profile from "./Profile";
 import MvPage from "./MvPage";
 
+
 export {
-  AlbumPage, ArtistPage, HomePage, HubPage, MvPage,
+  AlbumPage, ArtistPage, HomePage, HubPage, MvPage, Profile,
   MyMusicPage, NewFeedPage, NotFound, RadioPage, SearchPage,
   Top100Page, ZingChartPage, NewMusicPage, VideoPopUp, HistoryPage, AuthenticationPage
 };

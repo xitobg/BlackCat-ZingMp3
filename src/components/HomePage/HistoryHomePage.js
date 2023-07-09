@@ -23,7 +23,7 @@ const HistoryHomePage = () => {
                   // eslint-disable-next-line no-unused-vars
                   classGrid = "col l-1-4 m-none c-4"
                };
-               return <CarouselItem key={index} item={item} desc={false} artis={false} class1={classGrid}></CarouselItem>
+               return <CarouselItem key={index} item={item} desc={false} artis={false} class1={classGrid}/>
             })}
       </PlayListSelector>
    )

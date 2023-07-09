@@ -22,6 +22,7 @@ const SearchPageMv = () => {
    useEffect(() => {
       scrollTop()
       fetchData()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [id])
 
    if (datas?.length === 0) return <LoadingSvg></LoadingSvg>

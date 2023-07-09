@@ -11,6 +11,7 @@ const FavoriteArtistHomePapge = memo(() => {
     if(data && dataSelector) {
       setData(dataSelector?.items);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
   return (
     <PlayListSelector title={dataSelector?.title}>

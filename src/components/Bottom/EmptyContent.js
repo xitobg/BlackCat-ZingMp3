@@ -37,7 +37,7 @@ const EmptyStyled = styled.div`
 `
 
 const EmptyContent = ({ text, textBtn }) => {
-   const navigate = useNavigate()
+   const navigate = useNavigate();
    return (
       <EmptyStyled className="zm-empty">
          <div className={`icon ${"favorite-song"}`}></div>
@@ -46,7 +46,7 @@ const EmptyContent = ({ text, textBtn }) => {
             {textBtn}
          </button>
       </EmptyStyled>
-   )
-}
+   );
+};
 
-export default EmptyContent
+export default EmptyContent;

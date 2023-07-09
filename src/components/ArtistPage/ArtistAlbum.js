@@ -17,8 +17,7 @@ const ArtistAlbum = () => {
             dataSelector?.items?.length > 0 &&
             dataSelector?.items?.map((e, index) => {
                let classGird = "col l-2-4 m-3 c-6 !mb-[30px]"
-
-               return <CarouselItem key={e.encodeId} artis={true} desc={false} class1={classGird} item={e}></CarouselItem>
+               return <CarouselItem key={e.encodeId} artis={true} desc={false} class1={classGird} item={e}/>
             })}
       </PlayListSelector>
    )

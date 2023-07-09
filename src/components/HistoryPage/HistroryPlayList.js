@@ -4,8 +4,7 @@ import CarouselItem from "../Selection/CarouselItem"
 import PlayListSelector from "../Selection/PlayListSelector"
 
 const HistroryPlayList = () => {
-   const recentPlaylist = useSelector((state) => state.logged.recentPlaylist)
-
+   const recentPlaylist = useSelector((state) => state.logged.recentPlaylist);
    return (
       <div className="main_songnew main-page-item active">
          <PlayListSelector classAdd2={"history-playlist"}>

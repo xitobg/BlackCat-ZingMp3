@@ -20,12 +20,13 @@ const NewMusicHomePage = memo(() => {
    const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId);
    const { playing, isReady } = useSelector((state) => state.setting);
 
-   const dataSelector = data?.data.items.find((e) => e.title === "Nhạc mới")
+   const dataSelector = data?.data.items.find((e) => e.sectionId === "hAlbum");
 
    useEffect(() => {
       if(data) {
-         setData(dataSelector.items);
+         setData(dataSelector?.items);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
 
    const navigationPrevRef = React.useRef(null);

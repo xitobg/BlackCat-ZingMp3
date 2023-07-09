@@ -28,7 +28,8 @@ const AlbumPageInfo = memo(({ datas }) => {
             refDiv.current.classList.remove("rotatePause")
          }, 500)
       }
-   }, [playing])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [playing]);
 
    const onClickBtn = useCallback(async () => {
       dispatch(setPlay(false))
@@ -38,9 +39,10 @@ const AlbumPageInfo = memo(({ datas }) => {
          dispatch(pushPlayListsLogged(datas))
       }
       dispatch(setPlay(true))
-   }, [])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
-   const { isLike, handleLike } = useLikeHook(datas, 1)
+   const { isLike, handleLike } = useLikeHook(datas, 1);
 
    return (
       <div className="media playlist-header sticky">

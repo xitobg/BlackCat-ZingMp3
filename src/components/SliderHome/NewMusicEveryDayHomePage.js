@@ -9,13 +9,14 @@ const NewMusicEveryDayHomePage = memo(() => {
    const [datas, setData] = useState(null);
    const { data, status } = useGetHomePage();
 
-   const dataSelector = data?.data.items.find((e) => e.sectionId === "hAutoTheme2");
-   //  const dataSelector = data?.data.items[4]
+   // const dataSelector = data?.data.items.find((e) => e.sectionId === "hAutoTheme2");
+   const dataSelector = data?.data.items[4];
 
    useEffect(() => {
       if(data) {
          setData(dataSelector?.items)
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
 
    return (

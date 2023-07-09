@@ -19,7 +19,7 @@ const EventHomePage = memo(() => {
          "https://top10quangbinh.vn/wp-content/uploads/2022/10/anh-gai-xinh-che-mat-2.jpg",
          "https://khoinguonsangtao.vn/wp-content/uploads/2022/08/hinh-anh-meo-cute-1.jpg"
        ]
-    }, {
+    },{
        coverH: "https://cdn.discordapp.com/attachments/1092880160799326350/1092880297713991850/music.gif",
        title: "BlackCat-Club", 
        startTime: "1672574400",
@@ -32,7 +32,7 @@ const EventHomePage = memo(() => {
          "https://toigingiuvedep.vn/wp-content/uploads/2022/01/anh-meo-cute.jpg",
          "https://i.pinimg.com/originals/e4/7d/3c/e47d3cc028272905c14993deef6b68bf.jpg"
        ]
-    }, {
+    },{
        coverH: "https://cdn.discordapp.com/attachments/1092880160799326350/1092880297713991850/music.gif",
        title: "BlackCat-Club", 
        startTime: "1672574400",
@@ -45,6 +45,32 @@ const EventHomePage = memo(() => {
          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJXEMo3Ao5QRaKnczjzT9iSzVKrbqPNsydGiPIo3NJS-isfA&s",
          "https://toigingiuvedep.vn/wp-content/uploads/2022/03/hinh-cute-meo.jpg"
        ]
+    },{
+      coverH: "https://cdn.discordapp.com/attachments/1092880160799326350/1092880297713991850/music.gif",
+      title: "BlackCat-Club", 
+      startTime: "1672574400",
+      label: "Phát Hành Bài Hát",
+      subscribeText: "đăng ký",
+      unsubscribeText: "Đã đăng ký", 
+      totalFollow: "11",
+      followers: [
+        "https://kynguyenlamdep.com/wp-content/uploads/2022/06/anh-gai-xinh-cuc-dep.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJXEMo3Ao5QRaKnczjzT9iSzVKrbqPNsydGiPIo3NJS-isfA&s",
+        "https://toigingiuvedep.vn/wp-content/uploads/2022/03/hinh-cute-meo.jpg"
+      ]
+    },{
+      coverH: "https://cdn.discordapp.com/attachments/1092880160799326350/1092880297713991850/music.gif",
+      title: "BlackCat-Club", 
+      startTime: "1672574400",
+      label: "Phát Hành Bài Hát",
+      subscribeText: "đăng ký",
+      unsubscribeText: "Đã đăng ký", 
+      totalFollow: "11",
+      followers: [
+        "https://kynguyenlamdep.com/wp-content/uploads/2022/06/anh-gai-xinh-cuc-dep.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJXEMo3Ao5QRaKnczjzT9iSzVKrbqPNsydGiPIo3NJS-isfA&s",
+        "https://toigingiuvedep.vn/wp-content/uploads/2022/03/hinh-cute-meo.jpg"
+      ]
     },
   ];
   /*========================================================

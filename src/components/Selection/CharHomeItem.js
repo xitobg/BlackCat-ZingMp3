@@ -15,6 +15,7 @@ const CharHomeItem = memo(({ id }) => {
       if (data) {
          setData(dataSelector)
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status])
 
    const getEnCodeId = (num) => {

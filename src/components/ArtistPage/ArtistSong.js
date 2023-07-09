@@ -6,10 +6,8 @@ import ItemChartList from "../TopChartPage/ItemChartList"
 
 const ArtistSong = () => {
    const datas = useOutletContext()
-   const dataSelector = datas?.sections?.find((e) => e.sectionType === "song")
-
-   if (datas?.length === 0 || !datas) return <LoadingSvg></LoadingSvg>
-
+   const dataSelector = datas?.sections?.find((e) => e.sectionType === "song");
+   if (datas?.length === 0 || !datas) return <LoadingSvg/>
    return (
       <div>
          {" "}
@@ -30,11 +28,9 @@ const ArtistSong = () => {
             <div className="main_topchart mt-2">
                <div className="container_zing-chart">
                   <div className="zing-chart_list pt-2">
-                     {dataSelector &&
-                        dataSelector?.items?.length > 0 &&
-                        dataSelector?.items?.map((e, index) => {
-                           return <ItemChartList isNoneRank item={e} index={index} key={e.encodeId}></ItemChartList>
-                        })}
+                     {dataSelector && dataSelector?.items?.length > 0 && dataSelector?.items?.map((e, index) => {
+                        return <ItemChartList isNoneRank item={e} index={index} key={e.encodeId}/>
+                     })}
                   </div>
                </div>
             </div>

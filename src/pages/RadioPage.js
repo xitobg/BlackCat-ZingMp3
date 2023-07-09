@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { useGetRadioPage } from "../asset/api/path"
 import {
-  LoadingSvg, LoadingImage, NewProgramRaido, FeaturedEpisodesRadio, 
+  LoadingImage, NewProgramRaido, FeaturedEpisodesRadio, 
   DiscoverPoscast, CategoryRadio, RadioHomePage,
   RadReplayRadio, SidleRadio,
 } from "../components/main";
@@ -16,6 +16,7 @@ const RadioPage = () => {
             type: "info",
          });
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
    // const selectorListent = datas?.find((e) => e.title === "Đón nghe");
    const selectorReplay = datas?.filter((e) => e.sectionId === "radReplay");
@@ -25,7 +26,7 @@ const RadioPage = () => {
    const selectorFeaturedEpisodes = datas?.find((e) => e.sectionId === "radPromoteEpisode");
    const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram");
    
-   if (datas.length === 0) return <LoadingImage image={0}/>
+   if(datas.length === 0) return <LoadingImage image={0}/>
 
    return (
       <div className="mt-1">

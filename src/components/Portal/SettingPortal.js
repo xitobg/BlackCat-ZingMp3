@@ -121,8 +121,8 @@ const SettingPortalChildren = () => {
 
 const SettingPortal = () => {
    const project = [
-     { name: "Giới thiệu", icons: "icon ic-20-info", path: "/test" },
-     { name: "Facebook", icons: "icon ic-20-Report", path: "https://forms.gle/Nvh7kthdvr4a5SBd7" },
+     { name: "Giới thiệu", icons: "icon ic-20-info", path: "/profile" },
+     { name: "Facebook", icons: "icon ic-20-Report", path: "https://www.facebook.com/phan.vinh.92754/" },
      { name: "Liên hệ", icons: "icon ic-20-Call", path: "https://mp3.zing.vn/huong-dan/contact" },
      // { name: "", icons: "", path: "" },
    ];
