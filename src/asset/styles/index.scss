@@ -87,7 +87,7 @@ li {
 }
 
 :root {
-  --box-hot-item-bg: rgba(254, 255, 255, 0.1);
+  --box-hot-item-bg: rgba(77, 80, 80, 0.1);
   --box-hot-item-bg-hover: rgba(254, 255, 255, 0.2);
   --offset-x-second: calc(0px - ((230px - (230px * var(--scale-rate-second))) / 2 + 20px));
   --offset-x-third: calc(0px - ((230px - (230px * var(--scale-rate-third))) / 2 + 40px));
@@ -133,11 +133,7 @@ li {
   --primary-bg: #192f60;
 }
 
-:root,
-[data-theme="green-light"],
-[data-theme="light"],
-[data-theme="pink-light"],
-[data-theme="yellow"] {
+:root, [data-theme="green-light"], [data-theme="light"],[data-theme="pink-light"], [data-theme="yellow"] {
   --background-tooltip: #e8e8e8;
   --white: #fff;
   --black: #32323d;

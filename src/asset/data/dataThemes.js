@@ -1,3 +1,16 @@
+/**
+ * dataStyle: [
+      "--layout-bg: #3d3d3d", // khi kéo suống dưới
+      "--player-bg: #3d3d3d", // màu thanh phát nhạc 
+      "--primary-bg: #3d3d3d", // màu bảng chọn giao diện
+      "--purple-primary: #3d3d3d", // màu nút, hiện tại đang chọn
+      "--box-hot-item-bg: rgba(255, 0, 234, 0.3)", // 
+      "--box-hot-item-bg-hover: rgba(255, 0, 234, 0.3)", //
+      "--link-text-hover: #ffd966", // màu các tùy chọn như: cá nhân, top chat, radio .... 
+      "--text-item-hover: #f44336", // màu lựa chọn hiện tại
+   ],
+ */
+
 export const themes = [
    {
       title: "Chủ Đề Mặc Định",
@@ -51,78 +64,20 @@ export const themes = [
          { 
             name: "Đường phố về đêm",
             itemS: "https://img6.thuthuatphanmem.vn/uploads/2022/02/25/background-duong-pho-anime-full-hd_081737938.jpeg",
-            dataTheme: "dark",
-            bgImg: "https://img6.thuthuatphanmem.vn/uploads/2022/02/25/background-duong-pho-anime-full-hd_081737938.jpeg",
-            bgPlaying: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1//images/theme/xone-miniplayer.jpg",
-            bgHeader: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1//images/theme/xone-header.jpg",
-            dataStyle: [ 
-               "--purple-primary: #D1AB00",
-               "--primary-bg: #363636",
-               "--progressbar-active-bg: #d7cb1f",
-               "--link-text-hover: #E5BB00",
-               "--miniplayer-bg-img: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/xone-miniplayer.jpg')",
-               "--header-bg-img: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/xone-header.jpg')",
-            ],
-         }, {
-            name: "Lisa",
-            itemS: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/lisa.jpg",
-            dataTheme: "pink-light",
-            bgImg: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/lisa.jpg",
-            bgPlaying: false,
-            bgHeader: false,
-            dataStyle: [
-               "--layout-bg: #F1DDD8",
-               "--player-bg: #F4CBCA",
-               "--primary-bg: #F9E6E2",
-               "--purple-primary: #D14781",
-               "--box-hot-item-bg: rgba(254,255,255,0.3)",
-               "--box-hot-item-bg-hover: rgba(254,255,255,0.4)",
-               "--link-text-hover: #CC3373",
-               "--text-item-hover: #CC3373",
-            ],
-         }, {
-            name: "Jennie Kim",
-            itemS: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/jennie.jpg",
-            dataTheme: "gray",
-            bgImg: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/jennie.jpg",
-            bgPlaying: false,
-            bgHeader: false,
-            dataStyle: [
-               "--layout-bg: #BBB9C4",
-               "--player-bg: #C6C4D1",
-               "--primary-bg: #CAC6DD",
-               "--purple-primary: #8919AE",
-               "--text-item-hover: #6F1F89",
-               "--text-item-hover: #2a5e6b",
-            ],
-         }, {
-            name: "Jennie Kim",
-            itemS: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/jisoo.jpg",
-            dataTheme: "light",
-            bgImg: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/jisoo.jpg",
-            bgPlaying: false,
-            bgHeader: false,
-            dataStyle: [
-               "--purple-primary: #8D22C3",
-               "--primary-bg: #FFFFFF",
-               "--text-item-hover: #8D22C3",
-               "--link-item-hover: #8D22C3",
-            ],
-         }, {
-            name: "Rosé",
-            itemS: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/rose.jpg",
             dataTheme: "blue",
-            bgImg: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/rose.jpg",
-            bgPlaying: false,
+            bgImg: "https://img6.thuthuatphanmem.vn/uploads/2022/02/25/background-duong-pho-anime-full-hd_081737938.jpeg",
+            bgPlaying: false, 
             bgHeader: false,
-            dataStyle: [
-               "--layout-bg: #061C4F",
-               "--player-bg: #061641",
-               "--primary-bg: #1A3570",
-               "--purple-primary: #3560F5",
-               "--link-item-hover: #8D22C3",
-            ],
-         },
+            dataStyle: false,
+         }, {
+            name: "keping genshin",
+            itemS: "https://gamelandvn.com/wp-content/uploads/anh/2020/11/keqing-thumbnail.jpg",
+            dataTheme: "blue",
+            bgImg: "https://cdn.discordapp.com/attachments/765620139126554644/826026547746963506/image0.gif",
+            bgPlaying: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1//images/theme/xone-header.jpg",
+            bgHeader: "https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1//images/theme/xone-header.jpg",
+            dataStyle: false,
+         }
       ],
    },
    {
