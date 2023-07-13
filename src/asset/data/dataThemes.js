@@ -63,7 +63,7 @@ export const themes = [
      items: [
          { 
             name: "cute girl",
-            itemS: "https://cdn.discordapp.com/attachments/1055150050357022843/1129147206490918962/9541ce376c10daa7909efd47e043f77f.jpg",
+            itemS: "https://cdn.discordapp.com/attachments/1055150050357022843/1129148598790144071/IMG_20230714_033259.jpg",
             dataTheme: "dark",
             bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129147206218301570/Picsart_23-07-14_03-27-13-397.png",
             bgPlaying: false, 
