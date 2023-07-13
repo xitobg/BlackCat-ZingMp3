@@ -65,7 +65,7 @@ export const themes = [
             name: "test",
             itemS: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ72_q9Mjon9s8t2wBBsNgQ0L3epVFTEoag&usqp=CAU",
             dataTheme: "blue",
-            bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129143364177117234/Picsart_23-07-14_03-12-17-327.jpg",
+            bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129145166708609115/Picsart_23-07-14_03-19-13-940.jpg",
             bgPlaying: false, 
             bgHeader: false,
             dataStyle: false,
