@@ -59,13 +59,13 @@ export const themes = [
       ],
    },
    {
-     title: "Mobile",
+     title: "Hình nền cho Mobile",
      items: [
          { 
-            name: "test",
-            itemS: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ72_q9Mjon9s8t2wBBsNgQ0L3epVFTEoag&usqp=CAU",
-            dataTheme: "blue",
-            bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129145166708609115/Picsart_23-07-14_03-19-13-940.jpg",
+            name: "cute girl",
+            itemS: "https://cdn.discordapp.com/attachments/1055150050357022843/1129147206490918962/9541ce376c10daa7909efd47e043f77f.jpg",
+            dataTheme: "dark",
+            bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129147206218301570/Picsart_23-07-14_03-27-13-397.png",
             bgPlaying: false, 
             bgHeader: false,
             dataStyle: false,
@@ -73,7 +73,7 @@ export const themes = [
      ]
    },
    {
-      title: "Phong Cảnh Anime",
+      title: "Hình nền cho Máy tính",
       items: [
          { 
             name: "Đường phố về đêm",
