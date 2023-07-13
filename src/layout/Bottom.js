@@ -87,16 +87,16 @@ const BottomRight = memo(() => {
          if(!destination) return;
          const reorderedItems = reorder(items, source.index, destination.index);
          let indexActive = reorderedItems.find((e) => e.encodeId === currentEncodeId);
-         if (!isRandom) {
-            if (source.index === currentIndexSong) {
+         if(!isRandom) {
+            if(source.index === currentIndexSong) {
                dispatch(setDraggItemActive(destination.index));
             };
             setItems(reorderedItems);
             dispatch(setNextSong(reorderedItems.indexOf(indexActive)));
             dispatch(setDraggUpdateList(reorderedItems));
          };
-         if (isRandom) {
-            if (source.index === currentIndexSong) {
+         if(isRandom) {
+            if(source.index === currentIndexSong) {
                dispatch(setDraggItemActiveShuffle(destination.index));
             };
             setItems(reorderedItems);
@@ -131,7 +131,7 @@ const BottomRight = memo(() => {
                               <ul className="player_queue-listmusic" {...provoied.droppableProps} ref={provoied.innerRef}>
                                  {items && items?.length > 0 && items?.map((e, index) => {
                                        let lastIndex = false
-                                       if (index + 1 === items.length) {
+                                       if(index + 1 === items.length) {
                                           lastIndex = true
                                        };
                                        return (<ItemRighPlayer lastIndex={lastIndex} key={e.encodeId || e.id} index={index} data={e}/>);

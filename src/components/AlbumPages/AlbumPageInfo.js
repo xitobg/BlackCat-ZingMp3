@@ -1,13 +1,13 @@
-import React, { memo, useEffect, useRef, useCallback } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { Link } from "react-router-dom"
-import { v4 as uuidv4 } from "uuid"
-import { getFormartTimeDDYY } from "../../asset/data/functions"
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
-import ActionIcon from "../Icon/ActionIcon"
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
-import { useLikeHook } from "../../layout/Hook"
+import React, { memo, useEffect, useRef, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
+import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
+import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
+import { getFormartTimeDDYY } from "../../asset/data/functions";
+import { useLikeHook } from "../../layout/Hook";
+import ActionIcon from "../Icon/ActionIcon";
 
 const AlbumPageInfo = memo(({ datas }) => {
    const dispatch = useDispatch()
@@ -20,25 +20,25 @@ const AlbumPageInfo = memo(({ datas }) => {
    let activeAlbum = datas?.encodeId === playlistEncodeId;
 
    useEffect(() => {
-      if (activeAlbum && !playing) {
-         refNum.current += 1
-         if (refNum.current <= 1) return
-         refDiv.current.classList.add("rotatePause")
+      if(activeAlbum && !playing) {
+         refNum.current += 1;
+         if(refNum.current <= 1) return;
+         refDiv.current.classList.add("rotatePause");
          setTimeout(() => {
-            refDiv.current.classList.remove("rotatePause")
-         }, 500)
-      }
+            refDiv.current.classList.remove("rotatePause");
+         }, 500);
+      };
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [playing]);
 
-   const onClickBtn = useCallback(async () => {
-      dispatch(setPlay(false))
-      dispatch(setReady(false))
-      await dispatch(fetchPlayList(datas?.encodeId))
-      if (datas.textType === "Playlist") {
-         dispatch(pushPlayListsLogged(datas))
-      }
-      dispatch(setPlay(true))
+   const onClickBtn = useCallback(async() => {
+      dispatch(setPlay(false));
+      dispatch(setReady(false));
+      await dispatch(fetchPlayList(datas?.encodeId));
+      if(datas.textType === "Playlist") {
+         dispatch(pushPlayListsLogged(datas));
+      };
+      dispatch(setPlay(true));
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
@@ -81,11 +81,10 @@ const AlbumPageInfo = memo(({ datas }) => {
                <div className="release">Cập nhật: {getFormartTimeDDYY(datas?.contentLastUpdate)}</div>
                <div className="artists">
                   {datas?.artists && datas.artists?.map((e, index) => {
-                        let prara = ", "
-
-                        if (index === datas.artists.length - 1) {
-                           prara = ""
-                        }
+                        let prara = ", ";
+                        if(index === datas.artists.length - 1) {
+                           prara = "";
+                        };
 
                         return (
                            <span key={uuidv4()}>
@@ -105,25 +104,13 @@ const AlbumPageInfo = memo(({ datas }) => {
                {activeAlbum && (
                   <>
                      {!playing && (
-                        <button
-                           onClick={() => {
-                              dispatch(setPlay(true))
-                           }}
-                           className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all"
-                           tabIndex={0}
-                        >
+                        <button onClick={() => dispatch(setPlay(true))} className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all" tabIndex={0}>
                            <i className="icon ic-play" />
                            <span>Tiếp tục phát</span>
                         </button>
                      )}
                      {playing && (
-                        <button
-                           onClick={() => {
-                              dispatch(setPlay(false))
-                           }}
-                           className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all"
-                           tabIndex={0}
-                        >
+                        <button onClick={() => dispatch(setPlay(false))} className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all" tabIndex={0}>
                            <i className="icon ic-pause" />
                            <span>Tạm Dừng</span>
                         </button>
@@ -135,21 +122,14 @@ const AlbumPageInfo = memo(({ datas }) => {
                   <>
                      {loading && (
                         <>
-                           <button
-                              className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all"
-                              tabIndex={0}
-                           >
+                           <button className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all" tabIndex={0}>
                               <span>Loading...</span>
                            </button>
                         </>
                      )}
                      {!loading && (
                         <>
-                           <button
-                              onClick={onClickBtn}
-                              className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all"
-                              tabIndex={0}
-                           >
+                           <button onClick={onClickBtn} className="zm-btn btn-play-all is-outlined active is-medium is-upper button transition-all" tabIndex={0}>
                               <i className="icon ic-play" />
                               <span>Phát Album</span>
                            </button>
@@ -171,7 +151,7 @@ const AlbumPageInfo = memo(({ datas }) => {
             </div>
          </div>
       </div>
-   )
-})
+   );
+});
 
 export default AlbumPageInfo;

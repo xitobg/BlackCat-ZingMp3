@@ -59,6 +59,20 @@ export const themes = [
       ],
    },
    {
+     title: "Mobile",
+     items: [
+         { 
+            name: "test",
+            itemS: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ72_q9Mjon9s8t2wBBsNgQ0L3epVFTEoag&usqp=CAU",
+            dataTheme: "blue",
+            bgImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ72_q9Mjon9s8t2wBBsNgQ0L3epVFTEoag&usqp=CAU",
+            bgPlaying: false, 
+            bgHeader: false,
+            dataStyle: false,
+         }
+     ]
+   },
+   {
       title: "Phong Cảnh Anime",
       items: [
          { 

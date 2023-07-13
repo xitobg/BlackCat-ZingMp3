@@ -1,13 +1,13 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import React from "react";
 import { setOpenClass, setOpenMain } from "../../features/openMainFull/openMainFullFeatures"
 import { useLikeHook } from "../../layout/Hook"
 
 const BottomControlLeft = () => {
-   const dispatch = useDispatch()
-   const infoSong = useSelector((state) => state.queueNowPlay.infoSongCurrent)
-   const { isLike, handleLike } = useLikeHook(infoSong, 2)
+   const dispatch = useDispatch();
+   const infoSong = useSelector((state) => state.queueNowPlay.infoSongCurrent);
+   const { isLike, handleLike } = useLikeHook(infoSong, 2);
 
    return (
       <div className="player_controls-left">

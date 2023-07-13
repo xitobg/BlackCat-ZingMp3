@@ -15,6 +15,7 @@ const ArtistSong = () => {
             classAdd="mb-[36px]"
             notRow
             classAdd2="w-full"
+            title={"Danh Sách Bài Hát"}
             isMyPage={
                <div className="flex items-center justify-center ">
                   <button className="personal_play-all">
@@ -23,7 +24,7 @@ const ArtistSong = () => {
                   </button>
                </div>
             }
-            title={"Danh Sách Bài Hát"}
+            
          >
             <div className="main_topchart mt-2">
                <div className="container_zing-chart">

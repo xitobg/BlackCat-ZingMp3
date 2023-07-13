@@ -2,8 +2,7 @@ import React, { memo } from "react"
 import styled from "styled-components"
 import NewReleaseitem from "../NewReleaseitem/NewReleaseitem"
 import usePortal from "react-cool-portal"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
@@ -60,7 +59,6 @@ const PortalStyle = styled.div`
          top: 0;
          bottom: 0;
          left: 0;
-
          right: 0;
       }
       .blur-bg {
@@ -96,7 +94,6 @@ const PortalStyle = styled.div`
    }
    .bio-content {
       padding: 24px;
-
       & > div {
          line-height: 1.43;
          color: var(--text-secondary);
@@ -117,13 +114,9 @@ const ArtistInfoTop = memo(({ data }) => {
    const playlistEncodeId = useSelector((state) => state.queueNowPlay.playlistEncodeId);
    const loading = useSelector((state) => state.queueNowPlay.loading);
    const playing = useSelector((state) => state.setting.playing);
-
    let active = playlistEncodeId === data?.playlistId;
-
    const { isLike, handleLike } = useLikeHook(data, 3);
-
    const { Portal, show, hide } = usePortal({ defaultShow: false });
-
    const handleClickBackdrop = (e) => {
       const id = e.target.id;
       if(id === "theme-overlay" || id === "portal-bio-arits") hide();
@@ -150,21 +143,11 @@ const ArtistInfoTop = memo(({ data }) => {
                            <div className="modal p-1 theme-modal  text-white">
                               <div className=" max-w-[480px] relative">
                                  <div className="w-full">
-                                    <button
-                                       onClick={() => hide()}
-                                       id="portal-bio-arits"
-                                       className="zm-btn zm-tooltip-btn close-btn is-hover-circle button"
-                                       tabIndex="0"
-                                    >
+                                    <button onClick={() => hide()} id="portal-bio-arits" className="zm-btn zm-tooltip-btn close-btn is-hover-circle button" tabIndex="0">
                                        <i className="icon ic-close"></i>
                                     </button>
                                     <div className="top">
-                                       <div
-                                          className="cover-bg"
-                                          style={{
-                                             backgroundImage: `url("${data?.thumbnailM}")`,
-                                          }}
-                                       />
+                                       <div className="cover-bg" style={{ backgroundImage: `url("${data?.thumbnailM}")` }}/>
                                        <div className="blur-bg" />
                                        <div className="top-content">
                                           <figure className="image is-48x48">
@@ -184,24 +167,23 @@ const ArtistInfoTop = memo(({ data }) => {
                            </div>
                         </div>
                      </PortalStyle>
-                  </Portal>
                </div>
                <div className="actions mt-[20px] mb-[15px] inline-flex gap-[10px] items-center justify-start">
                   <button
-                     onClick={async () => {
-                        if (active) {
-                           if (!playing) {
+                     onClick={async() => {
+                        if(active) {
+                           if(!playing) {
                               dispatch(setPlay(true))
                            } else {
                               dispatch(setPlay(false))
                            }
                         }
-                        if (!active) {
+                        if(!active) {
                            dispatch(setReady(false))
                            dispatch(setPlay(false))
                            await dispatch(fetchPlayList(data?.playlistId))
                            dispatch(setPlay(true))
-                           if (data?.textType === "Playlist") {
+                           if(data?.textType === "Playlist") {
                               dispatch(pushPlayListsLogged(data))
                            }
                         }
@@ -214,18 +196,14 @@ const ArtistInfoTop = memo(({ data }) => {
                      {active && playing && <span>Tạm Dừng</span>}
                      {active && !playing && <span>Phát Nhạc</span>}
                   </button>
-                  <button
-                     onClick={handleLike}
-                     className={`zm-btn is-outlined ${isLike ? "" : "active"}  mar-r-15 is-medium is-upper button`}
-                     tabIndex="0"
-                  >
+                  <button onClick={handleLike} className={`zm-btn is-outlined ${isLike ? "" : "active"}  mar-r-15 is-medium is-upper button`} tabIndex="0">
                      <span>
                         {isLike ? "ĐÃ QUAN TÂM" : "QUAN TÂM"} •{" "}
                         {data?.follow > 10000 ? data?.follow.toString().slice(0, -3) + "K" : data?.follow}
                      </span>
                   </button>
                </div>
-               <NewReleaseitem item={data?.topAlbum} isArtist></NewReleaseitem>
+               <NewReleaseitem item={data?.topAlbum} isArtist/>
             </div>
          </div>
          <div className="col l-5 m-5 c-12 ">
@@ -236,7 +214,7 @@ const ArtistInfoTop = memo(({ data }) => {
             </div>
          </div>
       </InfoTopStyles>
-   )
-})
+   );
+});
 
 export default ArtistInfoTop

@@ -1,20 +1,18 @@
-import React, { memo, useRef, useEffect, useState } from "react"
+import React, { memo, useRef, useEffect, useState, useCallback, useLayoutEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import ReactPlayer from "react-player/lazy";
+import { toast } from "react-toastify";
+import { setCurrentIndexSong, setCurrentIndexSongShuffle, setCurrentTime } from "../../features/QueueFeatures/QueueFeatures";
+import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
+import { pushSongsLogged } from "../../features/Logged/loggedFeatures";
 import { fancyTimeFormat } from "../../asset/data/functions";
-import { useDispatch, useSelector } from "react-redux"
-import ReactPlayer from "react-player/lazy"
-import { setCurrentIndexSong, setCurrentIndexSongShuffle, setCurrentTime } from "../../features/QueueFeatures/QueueFeatures"
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
-import { pushSongsLogged } from "../../features/Logged/loggedFeatures"
-import { useCallback } from "react"
-import { useLayoutEffect } from "react"
-import { toast } from "react-toastify"
 
 const BottomControlllPLayIng = memo(() => {
-   const progressBar = useRef()
-   const audioRef = useRef()
-   const progresArea = useRef()
-   const dispatch = useDispatch()
-   const [oke, setOke] = useState(false)
+   const progressBar = useRef();
+   const audioRef = useRef();
+   const progresArea = useRef();
+   const dispatch = useDispatch();
+   const [oke, setOke] = useState(false);
 
    const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId)
    const infoSongCurrent = useSelector((state) => state.queueNowPlay.infoSongCurrent)
@@ -35,12 +33,12 @@ const BottomControlllPLayIng = memo(() => {
 
    useEffect(() => {
       const setOff = () => {
-         dispatch(setPlay(false))
-      }
-      window.addEventListener("beforeunload", setOff())
+         dispatch(setPlay(false));
+      };
+      window.addEventListener("beforeunload", setOff());
       return () => {
-         window.removeEventListener("beforeunload", setOff())
-      }
+         window.removeEventListener("beforeunload", setOff());
+      };
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
@@ -63,17 +61,15 @@ const BottomControlllPLayIng = memo(() => {
                onReady={(e) => {
                   dispatch(setReady(true))
                   // save local
-                  if (!oke && currentTime !== 0) {
+                  if(!oke && currentTime !== 0) {
                      audioRef.current.seekTo(currentTime)
                      setOke(true)
-                  }
+                  };
                   dispatch(pushSongsLogged(infoSongCurrent))
                }}
-               onProgress={(e) => {
-                  dispatch(setCurrentTime(e.playedSeconds))
-               }}
+               onProgress={(e) => dispatch(setCurrentTime(e.playedSeconds))}
                onEnded={() => {
-                  if (!isLoop) {
+                  if(!isLoop) {
                      if (isRandom) {
                         dispatch(setCurrentIndexSongShuffle(currentIndexSong + 1))
                      }
@@ -96,11 +92,11 @@ const BottomControlllPLayIng = memo(() => {
                volume={volume}
                muted={muted}
                url={currentEncodeId ? `http://api.mp3.zing.vn/api/streaming/audio/${currentEncodeId}/320` : ""}
-            ></ReactPlayer>
+            />
          </div>
          <p className="playing_time-right">{fancyTimeFormat(infoSongCurrent?.duration)}</p>
       </div>
    )
-})
+});
 
 export default BottomControlllPLayIng;
