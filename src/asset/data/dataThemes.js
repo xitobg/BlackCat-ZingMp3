@@ -62,6 +62,15 @@ export const themes = [
      title: "Hình nền cho Mobile",
      items: [
          { 
+            name: "girl reading book",
+            itemS: "https://cdn.discordapp.com/attachments/1055150050357022843/1129149883635474483/IMG_20230714_033817.jpg",
+            dataTheme: "green-light",
+            bgImg: "https://cdn.discordapp.com/attachments/1055150050357022843/1129149794468757604/Picsart_23-07-14_03-37-50-688.png",
+            bgPlaying: false, 
+            bgHeader: false,
+            dataStyle: false,
+         },
+         { 
             name: "cute girl",
             itemS: "https://cdn.discordapp.com/attachments/1055150050357022843/1129148598790144071/IMG_20230714_033259.jpg",
             dataTheme: "dark",
