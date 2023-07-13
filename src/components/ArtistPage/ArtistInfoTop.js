@@ -167,6 +167,7 @@ const ArtistInfoTop = memo(({ data }) => {
                            </div>
                         </div>
                      </PortalStyle>
+                  </Portal>
                </div>
                <div className="actions mt-[20px] mb-[15px] inline-flex gap-[10px] items-center justify-start">
                   <button
